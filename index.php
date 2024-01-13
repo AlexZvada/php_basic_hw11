@@ -9,18 +9,14 @@ function getContent()
 }
 function writeToFile($file)
 {
-
-    for ($i = 0; $i < 3; $i++) {
-        $content = getContent();
-        file_put_contents($file, $content, FILE_APPEND);
-
-    }
+    $content = getContent();
+    file_put_contents($file, $content, FILE_APPEND);
 }
 
 function readFromFile($file)
 {
     $content = file($file);
-    $lastString = count($content) -1;
+    $lastString = count($content) - 1;
     return $content[$lastString];
 }
 
